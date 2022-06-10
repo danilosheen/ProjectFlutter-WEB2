@@ -76,7 +76,7 @@ class _EncontrosState extends State<Encontros> {
                         children: [
                           Text("Qtd. Alunos: "),
                           Container(
-                            width: 150,
+                            width: 120,
                             child: TextField(
                               keyboardType: TextInputType.number,
                               controller: qtdAlunosController,
@@ -88,7 +88,7 @@ class _EncontrosState extends State<Encontros> {
                         children: [
                           Text("Data: "),
                           Container(
-                            width: 180,
+                            width: 170,
                             child: TextField(
                               controller: dataController,
                             ),
@@ -144,7 +144,6 @@ class _EncontrosState extends State<Encontros> {
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Card(
-                      
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Row(

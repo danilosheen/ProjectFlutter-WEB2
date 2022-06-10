@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.only(top: 40, bottom: 32),
+                padding: const EdgeInsets.only(top: 60, bottom: 32),
                 child: Image.asset(
                   "images/logo.png",
                   width: 200,
@@ -104,13 +104,9 @@ class _HomeState extends State<Home> {
                     setState(() {
                       isLoading = true;
                     });
-                    await Future.delayed(Duration(seconds: 2));
+                    await Future.delayed(Duration(seconds: 1));
                     login().then((value) {
                       isLoading = false;
-                      setState(() {
-                        _mensagemErro =
-                            "Erro ao autenticar usuário, verifique e-mail e senha e tente novamente!";
-                      });
                     });
                   },
                   child: isLoading
