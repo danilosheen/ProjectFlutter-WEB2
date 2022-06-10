@@ -105,7 +105,13 @@ class _HomeState extends State<Home> {
                       isLoading = true;
                     });
                     await Future.delayed(Duration(seconds: 2));
-                    login().then((value) => isLoading = false);
+                    login().then((value) {
+                      isLoading = false;
+                      setState(() {
+                        _mensagemErro =
+                            "Erro ao autenticar usuário, verifique e-mail e senha e tente novamente!";
+                      });
+                    });
                   },
                   child: isLoading
                       ? Container(
@@ -134,7 +140,8 @@ class _HomeState extends State<Home> {
                 child: Center(
                   child: Text(
                     _mensagemErro,
-                    style: TextStyle(color: Colors.red, fontSize: 20),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.red, fontSize: 18),
                   ),
                 ),
               )
