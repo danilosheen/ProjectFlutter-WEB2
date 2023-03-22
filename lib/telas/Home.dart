@@ -24,7 +24,7 @@ class _HomeState extends State<Home> {
     String email = _controllerEmail.text;
     String senha = _controllerSenha.text;
     var res = await http.post(
-      Uri.parse("https://atividade03-psweb2.herokuapp.com/login"),
+      Uri.parse("http://127.0.0.1/login"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },

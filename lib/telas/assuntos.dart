@@ -18,7 +18,7 @@ class _AssuntosState extends State<Assuntos> {
 
   Future<List<Assunto>> listarEncontros() async {
     var res = await http.get(
-      Uri.parse("https://atividade03-psweb2.herokuapp.com/assuntos"),
+      Uri.parse("http://127.0.0.1/assuntos"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -31,7 +31,7 @@ class _AssuntosState extends State<Assuntos> {
 
   Future<void> remover(int idAssunto) async {
     await http.delete(
-      Uri.parse("https://atividade03-psweb2.herokuapp.com/assuntos/$idAssunto"),
+      Uri.parse("http://127.0.0.1/assuntos/$idAssunto"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'x-access-token': Autenticator().token!
@@ -41,7 +41,7 @@ class _AssuntosState extends State<Assuntos> {
 
   Future<void> cadastrar() async {
     await http.post(
-        Uri.parse("https://atividade03-psweb2.herokuapp.com/assuntos"),
+        Uri.parse("http://127.0.0.1/assuntos"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'x-access-token': Autenticator().token!
