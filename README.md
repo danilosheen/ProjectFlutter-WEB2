@@ -19,12 +19,7 @@ flutter run lib/main.dart
 
 - Abra o Android Studio e inicie sua VM android
 - Agora é só fazer login e acessar o app
-## Rotas cadastradas:
 
-
-#### As rotas de criação, atualização e remoção exigem que o usuário esteja logado utilizando autenticação JWT passado para login pelo parâmetro x-access-token
-##### - Os dados de login se encontram no <a href="https://github.com/danilosheen/web2-atividade03/blob/main/.env">.env</a>
-  ---
  ### Autor
 
 <a href="https://github.com/danilosheen/">
