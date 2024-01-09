@@ -30,5 +30,5 @@ flutter run lib/main.dart
 
  Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-Danilo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/danilo-ferreira-b56969194/)](https://www.linkedin.com/in/danilo-ferreira-b56969194/) [![Gmail Badge](https://img.shields.io/badge/-c.danilo.f.siva@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c.danilo.f.silva@gmail.com)](mailto:c.danilo.f.silva@gmail.com)
+[![Linkedin Badge](https://img.shields.io/badge/-Danilo-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/danilo-ferreira-b56969194/)](https://www.linkedin.com/in/danilo-ferreira-b56969194/) [![Gmail Badge](https://img.shields.io/badge/-c.danilo.f.silva@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:c.danilo.f.silva@gmail.com)](mailto:c.danilo.f.silva@gmail.com)
 
