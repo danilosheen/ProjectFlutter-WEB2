@@ -24,12 +24,13 @@ class _HomeState extends State<Home> {
     String email = _controllerEmail.text;
     String senha = _controllerSenha.text;
     var res = await http.post(
-      Uri.parse("http://127.0.0.1/login"),
+      Uri.parse("https://web2-atividade03.vercel.app/login"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
       body: jsonEncode(<String, String>{"user": email, "pass": senha}),
     );
+
     Map<String, dynamic> variavel = jsonDecode(res.body);
     var token = (variavel['token']);
     if (token != null) {
@@ -110,13 +111,13 @@ class _HomeState extends State<Home> {
                     });
                   },
                   child: isLoading
-                      ? Container(
+                      ? SizedBox(
                           height: 35,
                           child: CircularProgressIndicator(
                             color: Colors.white,
                           ),
                         )
-                      : Container(
+                      : SizedBox(
                           height: 35,
                           child: Center(
                             child: Text(
@@ -127,8 +128,8 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-                  ),
+                      padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
+                      backgroundColor: Colors.green),
                 ),
               ),
               Padding(

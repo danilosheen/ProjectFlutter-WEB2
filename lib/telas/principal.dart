@@ -57,13 +57,14 @@ class _PainelPrincipalState extends State<PainelPrincipal> {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => Encontros()));
                   },
-                  child: const Text(
-                    "Encontros",
-                    style: TextStyle(color: Colors.white, fontSize: 20),
-                  ),
+                  child: const Text("Encontros",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      )),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-                  ),
+                      padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
+                      backgroundColor: Colors.green),
                 ),
               ),
               Padding(
@@ -79,8 +80,8 @@ class _PainelPrincipalState extends State<PainelPrincipal> {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
-                  ),
+                      padding: const EdgeInsets.fromLTRB(32, 16, 32, 16),
+                      backgroundColor: Colors.green),
                 ),
               ),
             ],

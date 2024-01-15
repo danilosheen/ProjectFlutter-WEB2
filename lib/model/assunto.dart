@@ -14,9 +14,9 @@ class Assunto {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['id'] = this.id;
-    data['nome'] = this.nome;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['nome'] = nome;
     data['graudificuldade'] = graudificuldade;
     data['temponecessario'] = temponecessario;
     return data;

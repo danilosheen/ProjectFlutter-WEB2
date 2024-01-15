@@ -17,7 +17,7 @@ class _EncontrosState extends State<Encontros> {
 
   Future<List<Encontro>> listarEncontros() async {
     var res = await http.get(
-      Uri.parse("http://127.0.0.1/encontros"),
+      Uri.parse("https://web2-atividade03.vercel.app/encontros"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -30,8 +30,7 @@ class _EncontrosState extends State<Encontros> {
 
   Future<void> remover(int idEncontro) async {
     await http.delete(
-      Uri.parse(
-          "http://127.0.0.1/encontros/$idEncontro"),
+      Uri.parse("https://web2-atividade03.vercel.app/encontros/$idEncontro"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'x-access-token': Autenticator().token!
@@ -40,8 +39,7 @@ class _EncontrosState extends State<Encontros> {
   }
 
   Future<void> cadastrar() async {
-    await http.post(
-        Uri.parse("http://127.0.0.1/encontros"),
+    await http.post(Uri.parse("https://web2-atividade03.vercel.app/encontros"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'x-access-token': Autenticator().token!
@@ -56,7 +54,7 @@ class _EncontrosState extends State<Encontros> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(248, 248, 252, 253),
+      backgroundColor: const Color.fromARGB(248, 248, 252, 253),
       appBar: AppBar(
         title: const Text("Encontros"),
       ),
@@ -69,13 +67,13 @@ class _EncontrosState extends State<Encontros> {
               context: context,
               builder: (BuildContext context) {
                 return AlertDialog(
-                  title: Center(child: Text("Cadastrar Encontro")),
+                  title: const Center(child: Text("Cadastrar Encontro")),
                   content: Container(
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
                       Row(
                         children: [
-                          Text("Qtd. Alunos: "),
-                          Container(
+                          const Text("Qtd. Alunos: "),
+                          SizedBox(
                             width: 120,
                             child: TextField(
                               keyboardType: TextInputType.number,
@@ -86,8 +84,8 @@ class _EncontrosState extends State<Encontros> {
                       ),
                       Row(
                         children: [
-                          Text("Data: "),
-                          Container(
+                          const Text("Data: "),
+                          SizedBox(
                             width: 170,
                             child: TextField(
                               controller: dataController,
@@ -97,8 +95,8 @@ class _EncontrosState extends State<Encontros> {
                       ),
                       Row(
                         children: [
-                          Text("Assunto: "),
-                          Container(
+                          const Text("Assunto: "),
+                          SizedBox(
                             width: 150,
                             child: TextField(controller: assuntoController),
                           )
@@ -118,7 +116,7 @@ class _EncontrosState extends State<Encontros> {
                             },
                           );
                         },
-                        child: Text("Confirmar")),
+                        child: const Text("Confirmar")),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.pop(context);
@@ -126,12 +124,12 @@ class _EncontrosState extends State<Encontros> {
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.red)),
-                        child: Text("Cancelar"))
+                        child: const Text("Cancelar"))
                   ],
                 );
               });
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: FutureBuilder(
         future: Future.wait([listarEncontros()]),
@@ -163,7 +161,7 @@ class _EncontrosState extends State<Encontros> {
                                     ),
                                     Text(
                                       encontros[index].id.toString(),
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -172,7 +170,7 @@ class _EncontrosState extends State<Encontros> {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Alunos: ",
                                       style: TextStyle(fontSize: 18),
                                     ),
@@ -181,7 +179,7 @@ class _EncontrosState extends State<Encontros> {
                                     ),
                                     Text(
                                       encontros[index].qtdalunos!,
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -190,7 +188,7 @@ class _EncontrosState extends State<Encontros> {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Data: ",
                                       style: TextStyle(fontSize: 18),
                                     ),
@@ -199,7 +197,7 @@ class _EncontrosState extends State<Encontros> {
                                     ),
                                     Text(
                                       encontros[index].data!,
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -217,7 +215,7 @@ class _EncontrosState extends State<Encontros> {
                                     ),
                                     Text(
                                       encontros[index].assunto!,
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 )
@@ -231,7 +229,7 @@ class _EncontrosState extends State<Encontros> {
                                           context: context,
                                           builder: (BuildContext context) {
                                             return AlertDialog(
-                                              title: Center(
+                                              title: const Center(
                                                   child:
                                                       Text("Excluir encontro")),
                                               content: Text(
@@ -247,7 +245,7 @@ class _EncontrosState extends State<Encontros> {
                                                         Navigator.pop(context);
                                                       });
                                                     },
-                                                    child: Text("Confirmar")),
+                                                    child: const Text("Confirmar")),
                                                 ElevatedButton(
                                                     onPressed: () {
                                                       Navigator.pop(context);
@@ -257,7 +255,7 @@ class _EncontrosState extends State<Encontros> {
                                                             MaterialStateProperty
                                                                 .all(Colors
                                                                     .red)),
-                                                    child: Text("Cancelar"))
+                                                    child: const Text("Cancelar"))
                                               ],
                                             );
                                           });
@@ -275,7 +273,7 @@ class _EncontrosState extends State<Encontros> {
                   );
                 });
           } else {
-            return Center(child: const CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),

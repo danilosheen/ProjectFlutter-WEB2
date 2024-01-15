@@ -18,7 +18,7 @@ class _AssuntosState extends State<Assuntos> {
 
   Future<List<Assunto>> listarEncontros() async {
     var res = await http.get(
-      Uri.parse("http://127.0.0.1/assuntos"),
+      Uri.parse("https://web2-atividade03.vercel.app/assuntos"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -31,7 +31,7 @@ class _AssuntosState extends State<Assuntos> {
 
   Future<void> remover(int idAssunto) async {
     await http.delete(
-      Uri.parse("http://127.0.0.1/assuntos/$idAssunto"),
+      Uri.parse("https://web2-atividade03.vercel.app/assuntos/$idAssunto"),
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
         'x-access-token': Autenticator().token!
@@ -40,8 +40,7 @@ class _AssuntosState extends State<Assuntos> {
   }
 
   Future<void> cadastrar() async {
-    await http.post(
-        Uri.parse("http://127.0.0.1/assuntos"),
+    await http.post(Uri.parse("https://web2-atividade03.vercel.app/assuntos"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
           'x-access-token': Autenticator().token!
@@ -57,7 +56,7 @@ class _AssuntosState extends State<Assuntos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(248, 248, 252, 253),
+      backgroundColor: const Color.fromARGB(248, 248, 252, 253),
       appBar: AppBar(
         title: const Text("Encontros"),
       ),
@@ -76,8 +75,8 @@ class _AssuntosState extends State<Assuntos> {
                     child: Column(mainAxisSize: MainAxisSize.min, children: [
                       Row(
                         children: [
-                          Text("Id: "),
-                          Container(
+                          const Text("Id: "),
+                          SizedBox(
                             width: 200,
                             child: TextField(
                               keyboardType: TextInputType.number,
@@ -88,8 +87,8 @@ class _AssuntosState extends State<Assuntos> {
                       ),
                       Row(
                         children: [
-                          Text("Nome: "),
-                          Container(
+                          const Text("Nome: "),
+                          SizedBox(
                             width: 170,
                             child: TextField(
                               controller: nomeController,
@@ -99,8 +98,8 @@ class _AssuntosState extends State<Assuntos> {
                       ),
                       Row(
                         children: [
-                          Text("Grau de dificuldade: "),
-                          Container(
+                          const Text("Grau de dificuldade: "),
+                          SizedBox(
                             width: 75,
                             child: TextField(
                               controller: grauDificuldadeController,
@@ -110,8 +109,8 @@ class _AssuntosState extends State<Assuntos> {
                       ),
                       Row(
                         children: [
-                          Text("Tempo Necessário: "),
-                          Container(
+                          const Text("Tempo Necessário: "),
+                          SizedBox(
                             width: 80,
                             child: TextField(
                               controller: tempoNecessarioController,
@@ -133,7 +132,7 @@ class _AssuntosState extends State<Assuntos> {
                             },
                           );
                         },
-                        child: Text("Confirmar")),
+                        child: const Text("Confirmar")),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.pop(context);
@@ -141,12 +140,12 @@ class _AssuntosState extends State<Assuntos> {
                         style: ButtonStyle(
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.red)),
-                        child: Text("Cancelar"))
+                        child: const Text("Cancelar"))
                   ],
                 );
               });
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: FutureBuilder(
         future: Future.wait([listarEncontros()]),
@@ -178,7 +177,7 @@ class _AssuntosState extends State<Assuntos> {
                                     ),
                                     Text(
                                       assuntos[index].id.toString(),
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -187,7 +186,7 @@ class _AssuntosState extends State<Assuntos> {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Nome: ",
                                       style: TextStyle(fontSize: 18),
                                     ),
@@ -196,7 +195,7 @@ class _AssuntosState extends State<Assuntos> {
                                     ),
                                     Text(
                                       assuntos[index].nome!,
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -205,7 +204,7 @@ class _AssuntosState extends State<Assuntos> {
                                 ),
                                 Row(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Grau de dificuldade: ",
                                       style: TextStyle(fontSize: 18),
                                     ),
@@ -214,7 +213,7 @@ class _AssuntosState extends State<Assuntos> {
                                     ),
                                     Text(
                                       assuntos[index].graudificuldade!,
-                                      style: TextStyle(fontSize: 18),
+                                      style: const TextStyle(fontSize: 18),
                                     )
                                   ],
                                 ),
@@ -246,7 +245,7 @@ class _AssuntosState extends State<Assuntos> {
                                           context: context,
                                           builder: (BuildContext context) {
                                             return AlertDialog(
-                                              title: Center(
+                                              title: const Center(
                                                   child:
                                                       Text("Excluir asunto")),
                                               content: Text(
@@ -262,7 +261,7 @@ class _AssuntosState extends State<Assuntos> {
                                                         Navigator.pop(context);
                                                       });
                                                     },
-                                                    child: Text("Confirmar")),
+                                                    child: const Text("Confirmar")),
                                                 ElevatedButton(
                                                     onPressed: () {
                                                       Navigator.pop(context);
@@ -272,7 +271,7 @@ class _AssuntosState extends State<Assuntos> {
                                                             MaterialStateProperty
                                                                 .all(Colors
                                                                     .red)),
-                                                    child: Text("Cancelar"))
+                                                    child: const Text("Cancelar"))
                                               ],
                                             );
                                           });
@@ -290,7 +289,7 @@ class _AssuntosState extends State<Assuntos> {
                   );
                 });
           } else {
-            return Center(child: const CircularProgressIndicator());
+            return const Center(child: CircularProgressIndicator());
           }
         },
       ),
