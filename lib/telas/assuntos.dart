@@ -123,16 +123,20 @@ class _AssuntosState extends State<Assuntos> {
                   actionsAlignment: MainAxisAlignment.center,
                   actions: [
                     ElevatedButton(
-                        onPressed: () {
-                          cadastrar().then(
-                            (value) {
-                              setState(() {
-                                Navigator.pop(context);
-                              });
-                            },
-                          );
-                        },
-                        child: const Text("Confirmar")),
+                      onPressed: () {
+                        cadastrar().then(
+                          (value) {
+                            setState(() {
+                              Navigator.pop(context);
+                            });
+                          },
+                        );
+                      },
+                      child: const Text("Confirmar"),
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.green)),
+                    ),
                     ElevatedButton(
                         onPressed: () {
                           Navigator.pop(context);
@@ -261,7 +265,8 @@ class _AssuntosState extends State<Assuntos> {
                                                         Navigator.pop(context);
                                                       });
                                                     },
-                                                    child: const Text("Confirmar")),
+                                                    child: const Text(
+                                                        "Confirmar")),
                                                 ElevatedButton(
                                                     onPressed: () {
                                                       Navigator.pop(context);
@@ -271,7 +276,8 @@ class _AssuntosState extends State<Assuntos> {
                                                             MaterialStateProperty
                                                                 .all(Colors
                                                                     .red)),
-                                                    child: const Text("Cancelar"))
+                                                    child:
+                                                        const Text("Cancelar"))
                                               ],
                                             );
                                           });

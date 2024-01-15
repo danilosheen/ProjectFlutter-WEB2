@@ -28,7 +28,7 @@ class _PainelPrincipalState extends State<PainelPrincipal> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Painel principal"),
+        title: const Text("Painel principal"),
         actions: <Widget>[
           PopupMenuButton<String>(
             onSelected: _deslogarUsuario,
